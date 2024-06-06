@@ -1,6 +1,7 @@
+const { Timestamp } = require("mongodb")
 const { default: mongoose } = require("mongoose")
 
-const ProductSchema = mongoose.Schema(
+const userbaseSchema = mongoose.Schema(
     {
         ID:{
             type:String,
@@ -13,6 +14,18 @@ const ProductSchema = mongoose.Schema(
         lastName:{
             type:String,
             required: [true, "Last name missing"]
-        }
+        },
+        image:{
+            type: String,
+            required: false
+        },
+
+    },
+    {
+        timestamp:true,
     }
-)
+);
+
+const userbase = mongoose.model("userbase", userbaseSchema);
+
+module.exports = userbase;
