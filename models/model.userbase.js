@@ -15,10 +15,7 @@ const userbaseSchema = mongoose.Schema(
             type:String,
             required: [true, "Last name missing"]
         },
-        image:{
-            type: String,
-            required: false
-        },
+        
 
     },
     {
